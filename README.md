@@ -37,8 +37,15 @@ trajectories = [
     np.column_stack((np.linspace(0, 1, 90), 0.5 * np.cos(np.linspace(0, 4*np.pi, 90))))
 ]
 
-# Cluster the trajectories
-clusters = cluster_trajectories(trajectories, n_clusters=2)
+# Cluster the trajectories.
+# Using K-means
+clusters_kmeans = cluster_trajectories(trajectories, method='kmeans', n_clusters=3)
+
+# Using DBSCAN
+clusters_dbscan = cluster_trajectories(trajectories, method='dbscan', eps=0.5, min_samples=2)
+
+# Using hierarchical clustering
+clusters_hierarchical = cluster_trajectories(trajectories, method='hierarchical', n_clusters=3)
 
 print("Cluster assignments:", clusters)
 ```
