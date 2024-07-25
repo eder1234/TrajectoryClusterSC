@@ -47,7 +47,6 @@ clusters_dbscan = cluster_trajectories(trajectories, method='dbscan', eps=0.5, m
 # Using hierarchical clustering
 clusters_hierarchical = cluster_trajectories(trajectories, method='hierarchical', n_clusters=3)
 
-print("Cluster assignments:", clusters)
 ```
 
 ## Contributing
